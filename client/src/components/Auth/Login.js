@@ -40,6 +40,7 @@ const Login = ({ classes }) => {
           onSuccess={onSuccess}
           onFailure={onFailure}
           isSignedIn={true}
+          buttonText="Explore COVID-19 Deaths with Google"
           theme="dark" />
     </div>
   );

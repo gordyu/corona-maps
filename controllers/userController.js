@@ -13,7 +13,7 @@ exports.findOrCreateUser = async token => {
 
 const verifyAuthToken = async token => {
     try {
-        await client.verifyIdToken({
+        const ticket = await client.verifyIdToken({
             idToken: token,
             audience: process.env.OAUTH_CLIENT_ID
         })

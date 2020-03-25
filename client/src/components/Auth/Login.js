@@ -21,7 +21,7 @@ const Login = ({ classes }) => {
       headers: {authorization: idToken}
     })
     const data = await client.request(ME_QUERY)
-    console.log({data})
+    console.log({ data })
   };
 
   return <GoogleLogin clientId="699154144065-gpv5dfkm17rhpfua8kjjs7pcvikdlc5a.apps.googleusercontent.com"

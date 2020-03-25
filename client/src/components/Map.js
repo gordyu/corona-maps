@@ -50,7 +50,7 @@ const Map = ({ classes }) => {
       {/* Pin for User's Current Position */}
       {userPosition && (
         <Marker
-          latitutde={userPosition.latitude}
+          latitude={userPosition.latitude}
           longitude={userPosition.longitude}
           offsetLeft={-19}
           offsetTop={-37}

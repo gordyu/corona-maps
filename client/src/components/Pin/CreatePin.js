@@ -30,9 +30,10 @@ const CreatePin = ({ classes }) => {
 
   const handleImageUpload = async () => {
     const data = new FormData();
+    debugger;
     data.append("file", image);
     data.append("upload_preset", "corona-map");
-    data.append("cloud_name", "gordcloud");
+    {/* data.append("cloud_name", "gordcloud"); */}
     const res = await axios.post(
       "https://api.cloudinary.com/v1_1/gordcloud/image/upload",
       data
@@ -41,10 +42,11 @@ const CreatePin = ({ classes }) => {
   }
 
   const handleSubmit = async event => {
+    debugger
     try {
       event.preventDefault();
       setSubmitting(true);
-      const url = await handleImageUpload;
+      const url = await handleImageUpload();
       console.log('url is', url.toString());
       const { latitude, longitude } = state.draft;
       const variables = { title, image: url, content, latitude, longitude };

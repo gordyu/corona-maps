@@ -41,16 +41,14 @@ const CreatePin = ({ classes }) => {
   }
 
   const handleSubmit = async event => {
-    event.preventDefault();
     try {
+      event.preventDefault();
       setSubmitting(true);
       const url = await handleImageUpload;
+      console.log('url is', url.toString());
       const { latitude, longitude } = state.draft;
       const variables = { title, image: url, content, latitude, longitude };
-      const { createPin } = await client.request(
-        CREATE_PIN_MUTATION, 
-        variables
-      );
+      const { createPin } = await client.request(CREATE_PIN_MUTATION, variables);
       console.log("Pin created", createPin);
       handleDeleteDraft();
     } catch (err) {

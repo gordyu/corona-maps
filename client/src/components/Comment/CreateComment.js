@@ -16,8 +16,7 @@ const CreateComment = ({ classes }) => {
   const [comment, setComment] = useState("")
   const handleSubmitComment = async () => {
     const variables = { pinId: state.currentPin._id, text: comment }
-    const { createComment } = await client.request(CREATE_COMMENT_MUTATION, variables)
-    dispatchEvent({ type: "CREATE_COMMENT", payload: createComment })
+    await client.request(CREATE_COMMENT_MUTATION, variables)
     setComment("")
   }
   return (

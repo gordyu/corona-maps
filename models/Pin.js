@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const PinSchema = new mongoose.Schema({
+const PinSchema = new mongoose.Schema(
+  {
     title: String,
     content: String,
     image: String,
@@ -8,12 +9,14 @@ const PinSchema = new mongoose.Schema({
     longitude: Number,
     author: { type: mongoose.Schema.ObjectId, ref: "User" },
     comments: [
-        {
-            text: String,
-            createdAt: { type: Date, default: Date.now },
-            author: { type: mongoose.Schema.ObjectId, ref: "User" }
-        }
+      {
+        text: String,
+        createdAt: { type: Date, default: Date.now },
+        author: { type: mongoose.Schema.ObjectId, ref: "User" }
+      }
     ]
-}, { timestamps: true })
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("Pin", PinSchema)
+module.exports = mongoose.model("Pin", PinSchema);

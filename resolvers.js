@@ -1,5 +1,7 @@
-const { AuthenticationError, PubSub } = require("apollo-server");
- const Pin = require("./models/Pin");
+//const { AuthenticationError, PubSub } = require("apollo-server");
+const { AuthenticationError, PubSub } = require("apollo-server-express");
+
+const Pin = require("./models/Pin");
  
 const pubsub = new PubSub()
 const PIN_ADDED = "PIN_ADDED"

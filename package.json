@@ -12,8 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^2.3.1",
-    "apollo-server-express": "^2.11.0",
-    "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "google-auth-library": "^3.0.1",
     "graphql": "^14.1.1",
